@@ -14,6 +14,9 @@ export const { RouteProvider, useRoute, routes } = createRouter({
   intro: defineRoute("/introduction"),
   simpleAtom: defineRoute("/simple-atom"),
   suspense: defineRoute("/suspense"),
+  getset: defineRoute("/getter-setter"),
+  readwrite: defineRoute("/read-write-atom"),
+  atomWithDefault: defineRoute("/atom-with-default"),
 });
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(

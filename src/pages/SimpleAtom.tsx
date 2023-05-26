@@ -1,9 +1,9 @@
 import { Box, Button } from "@mui/material";
 import { Markdown } from "../components/Markdown";
-import { useAtom } from "jotai";
-import { counterAtom } from "../store/counterAtom";
-
+import { atom, useAtom } from "jotai";
 import md from "../slides/simpleAtom.md?raw";
+
+const counterAtom = atom(0);
 
 export const SimpleAtom = () => {
   const [count, setCount] = useAtom(counterAtom);

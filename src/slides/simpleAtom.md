@@ -4,11 +4,11 @@ The most simple version of a Jotai atom with primitive data
 
 ## Usage
 
-```
-import { atom, useAtom } from 'jotai';
+```ts
+import { atom, useAtom } from "jotai";
 
 // global initialization
-const counterAtom = atom(0);
+const counterAtom = atom<number>(0);
 
 // usage inside functional component
 const [count, setCount] = useAtom(counterAtom);

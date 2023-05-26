@@ -212,6 +212,9 @@ export const theme: ThemeOptions = createTheme({
           padding: 0,
           margin: 0,
         },
+        pre: {
+          marginBottom: "34px",
+        },
       },
     },
     MuiListItemIcon: {
