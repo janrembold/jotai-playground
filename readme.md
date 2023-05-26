@@ -1,6 +1,6 @@
 # Jotai Playground
 
-A simple react app (created with [Vite](https://vitejs.dev/)) as a Jotai playground for a Frontend Meetup Session in Freiburg.
+A simple react app (created with [Vite](https://vitejs.dev/)) as a [Jotai](https://jotai.org/) playground for a [Frontend Meetup](https://www.meetup.com/de-DE/frontend-meetup-freiburg/) session in Freiburg.
 
 # Usage
 
