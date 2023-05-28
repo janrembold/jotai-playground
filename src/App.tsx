@@ -14,6 +14,7 @@ import { Vanilla } from "./pages/Vanilla";
 import { AtomWithReset } from "./pages/AtomWithReset";
 import { DevToolsPage } from "./pages/DevToolsPage";
 import { Conclusion } from "./pages/Conclusion";
+import { Faq } from "./pages/Faq";
 
 const NavLink = ({ ...rest }) => (
   <Link sx={{ display: "block", py: "5px" }} {...rest} />
@@ -55,7 +56,7 @@ export const App = () => {
             <NavLink {...routes.atomFamily().link}>atomFamily</NavLink>
             <Box sx={{ mt: "12px" }}>
               <NavLink {...routes.devTools().link}>DevTools</NavLink>
-              <NavLink {...routes.atomWithReset().link}>Plugins</NavLink>
+              <NavLink {...routes.faq().link}>FAQ</NavLink>
               <NavLink {...routes.conclusion().link}>Conclusion</NavLink>
             </Box>
           </Box>
@@ -74,6 +75,7 @@ export const App = () => {
         {route.name === "atomFamily" && <AtomFamily />}
         {route.name === "atomWithReset" && <AtomWithReset />}
         {route.name === "devTools" && <DevToolsPage />}
+        {route.name === "faq" && <Faq />}
         {route.name === "conclusion" && <Conclusion />}
       </Box>
     </Box>

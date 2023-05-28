@@ -2,6 +2,7 @@
 
 ```ts
 const Content = () => {
+  // You could even do that with the `loadable` util from Jotai ;)
   const { data, loading, error } = useSomeApiEndpoint();
 
   if (loading) {

@@ -23,6 +23,7 @@ export const { RouteProvider, useRoute, routes } = createRouter({
   atomFamily: defineRoute("/atom-family"),
   atomWithReset: defineRoute("/atom-with-reset"),
   devTools: defineRoute("/devtools"),
+  faq: defineRoute("/faq"),
   conclusion: defineRoute("/conclusion"),
 });
 
