@@ -11,8 +11,8 @@ It can also be seen as a **lazy fetch** because the default value is **null** an
 ```ts
 import { atom, useAtom, useAtomValue, useSetAtom } from "jotai";
 
-// atom holding latest fetched data
-const dataAtom = atom<null | Promise<YourApiResponseType>>(null);
+// atom holding latest fetched data or null
+const dataAtom = atom<Promise<YourApiResponseType> | null>(null);
 
 // connect atom with any specific method
 const fetchDataAtom = atom(

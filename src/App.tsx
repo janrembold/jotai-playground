@@ -1,7 +1,6 @@
 import { Box, Link, Typography } from "@mui/material";
 import { ColorPalette } from "./theme";
 import { routes, useRoute } from "./main";
-import { Introduction } from "./pages/Introduction";
 import { SimpleAtom } from "./pages/SimpleAtom";
 import { Home } from "./pages/Home";
 import { SuspenseComponent } from "./pages/Suspense";
@@ -40,7 +39,6 @@ export const App = () => {
           </Link>
 
           <Box sx={{ mt: "30px" }}>
-            <NavLink {...routes.intro().link}>Intro</NavLink>
             <NavLink {...routes.simpleAtom().link}>Simple Atom</NavLink>
             <NavLink {...routes.suspense().link}>Suspense</NavLink>
             <NavLink {...routes.getset().link}>Getter / Setter</NavLink>
