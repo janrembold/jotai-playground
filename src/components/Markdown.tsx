@@ -62,7 +62,12 @@ export const Markdown = ({ text }: MarkdownProps) => (
         <Blockquote children={children} {...props} />
       )),
       code: memo(({ children }) => (
-        <SyntaxHighlighter language="typescript" style={github} showLineNumbers>
+        <SyntaxHighlighter
+          language="typescript"
+          style={github}
+          showLineNumbers
+          wrapLongLines
+        >
           {children as string}
         </SyntaxHighlighter>
       )),

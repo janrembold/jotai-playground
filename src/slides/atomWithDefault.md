@@ -7,21 +7,12 @@ For this case there is the **atomWithDefault** util function
 ## Usage
 
 ```ts
-import { atomWithDefault, useAtom } from "jotai";
+import { useAtomValue } from "jotai";
+import { atomWithDefault } from "jotai/utils";
 
-// example with item count param that is stored in a separate atom
-const itemCountAtom = atom(5);
-
-// immediately call `fetchSomeAsyncData`
-// this always leads to a Promise
-const dataAtom = atomWithDefault((get) =>
-  fetchSomeAsyncData(get(itemCountAtom))
-);
+// immediately call `fetchSomeAsyncData` -> always leads to a Promise response
+const dataAtom = atomWithDefault(() => fetchSomeAsyncData());
 
 // use atom value only and immediately call the default function
-const count = useAtomValue(counterAtom);
-
-// fetch 10 items
-const setCount = useSetAtom(itemCountAtom);
-setCount(10);
+const data = useAtomValue(dataAtom);
 ```

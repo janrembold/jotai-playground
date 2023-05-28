@@ -8,6 +8,12 @@ import { SuspenseComponent } from "./pages/Suspense";
 import { GetSet } from "./pages/GetSet";
 import { ReadWriteAtom } from "./pages/ReadWriteAtom";
 import { AtomWithDefault } from "./pages/AtomWithDefault";
+import { AtomFamily } from "./pages/AtomFamily";
+import { ProviderStore } from "./pages/ProviderStore";
+import { Vanilla } from "./pages/Vanilla";
+import { AtomWithReset } from "./pages/AtomWithReset";
+import { DevToolsPage } from "./pages/DevToolsPage";
+import { Conclusion } from "./pages/Conclusion";
 
 const NavLink = ({ ...rest }) => (
   <Link sx={{ display: "block", py: "5px" }} {...rest} />
@@ -38,12 +44,20 @@ export const App = () => {
             <NavLink {...routes.suspense().link}>Suspense</NavLink>
             <NavLink {...routes.getset().link}>Getter / Setter</NavLink>
             <NavLink {...routes.readwrite().link}>Read / Write Atom</NavLink>
-            <Box sx={{ mt: 1 }}>
+            <NavLink {...routes.provider().link}>Provider / Store</NavLink>
+            <NavLink {...routes.vanilla().link}>Vanilla</NavLink>
+            <Box sx={{ mt: "12px" }}>
               <Typography>Utils</Typography>
             </Box>
             <NavLink {...routes.atomWithDefault().link}>
               atomWithDefault
             </NavLink>
+            <NavLink {...routes.atomFamily().link}>atomFamily</NavLink>
+            <Box sx={{ mt: "12px" }}>
+              <NavLink {...routes.devTools().link}>DevTools</NavLink>
+              <NavLink {...routes.atomWithReset().link}>Plugins</NavLink>
+              <NavLink {...routes.conclusion().link}>Conclusion</NavLink>
+            </Box>
           </Box>
         </Box>
       </Box>
@@ -54,7 +68,13 @@ export const App = () => {
         {route.name === "suspense" && <SuspenseComponent />}
         {route.name === "getset" && <GetSet />}
         {route.name === "readwrite" && <ReadWriteAtom />}
+        {route.name === "provider" && <ProviderStore />}
+        {route.name === "vanilla" && <Vanilla />}
         {route.name === "atomWithDefault" && <AtomWithDefault />}
+        {route.name === "atomFamily" && <AtomFamily />}
+        {route.name === "atomWithReset" && <AtomWithReset />}
+        {route.name === "devTools" && <DevToolsPage />}
+        {route.name === "conclusion" && <Conclusion />}
       </Box>
     </Box>
   );

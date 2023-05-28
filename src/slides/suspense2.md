@@ -33,3 +33,5 @@ const SuspenseComponent = () => (
   </Suspense>
 );
 ```
+
+> 📌 This works exactly the same with **ErrorBoundary** to catch possible errors

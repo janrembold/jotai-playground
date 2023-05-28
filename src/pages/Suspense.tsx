@@ -6,6 +6,7 @@ import md2 from "../slides/suspense2.md?raw";
 import { Suspense } from "react";
 
 const delayedTextAtom = atom<string | Promise<string>>("");
+delayedTextAtom.debugLabel = "delayedTextAtom - suspense demo";
 
 const SuspenseContent = () => {
   const [text, setDelayedText] = useAtom(delayedTextAtom);
@@ -15,11 +16,13 @@ const SuspenseContent = () => {
       <Markdown text={md} />
       <Button
         variant="outlined"
-        onClick={() =>
+        onClick={() => {
           setDelayedText(
-            new Promise((res) => setTimeout(() => res(Date.toString()), 4000))
-          )
-        }
+            new Promise((res) =>
+              setTimeout(() => res(new Date().toString()), 4000)
+            )
+          );
+        }}
         sx={{ mb: 4 }}
       >
         Trigger Suspense (4sec)

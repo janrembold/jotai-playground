@@ -2,20 +2,28 @@
 
 To make your life a bit easier there are 3 ways of setting and getting atomic data from Jotai
 
-## Usage
+### Create any kind of atom
 
 ```ts
-import { atom, useAtom, useAtomValue, useSetAtom } from "jotai";
+import { atom } from "jotai";
 
-// global initialization
 const counterAtom = atom(0);
+```
 
-// use atom value only
+### Only use the atom value
+
+```ts
 const count = useAtomValue(counterAtom);
+```
 
-// use only setter function
+### Set the atom value
+
+```ts
 const setCount = useSetAtom(counterAtom);
+```
 
-// use both, getter and setter functions
+### Use getter and setter - same as React useState
+
+```ts
 const [count, setCount] = useAtom(counterAtom);
 ```

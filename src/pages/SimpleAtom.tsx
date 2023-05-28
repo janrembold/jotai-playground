@@ -1,19 +1,17 @@
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 import { Markdown } from "../components/Markdown";
-import { atom, useAtom } from "jotai";
+import { atom } from "jotai";
 import md from "../slides/simpleAtom.md?raw";
+import { Counter } from "../components/Counter";
 
 const counterAtom = atom(0);
+counterAtom.debugLabel = "counterAtom - simple atom demo";
 
 export const SimpleAtom = () => {
-  const [count, setCount] = useAtom(counterAtom);
-
   return (
     <Box>
       <Markdown text={md} />
-      <Button variant="outlined" onClick={() => setCount(count + 1)}>
-        Pressed {count} times
-      </Button>
+      <Counter />
     </Box>
   );
 };

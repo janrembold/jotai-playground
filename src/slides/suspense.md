@@ -14,6 +14,6 @@ const delayedTextAtom = atom<string | Promise<string>>("");
 const [text, setDelayedText] = useAtom(delayedTextAtom);
 const handleClick = () =>
   setDelayedText(
-    new Promise((res) => setTimeout(() => res(Date.toString()), 4000))
+    new Promise((res) => setTimeout(() => res(new Date().toString()), 4000))
   );
 ```
