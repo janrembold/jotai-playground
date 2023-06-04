@@ -14,10 +14,30 @@ import { AtomWithReset } from "./pages/AtomWithReset";
 import { DevToolsPage } from "./pages/DevToolsPage";
 import { Conclusion } from "./pages/Conclusion";
 import { Faq } from "./pages/Faq";
+import { Comparison } from "./pages/Comparison";
+import { Route } from "type-route";
+import { ReactNode } from "react";
 
-const NavLink = ({ ...rest }) => (
-  <Link sx={{ display: "block", py: "5px" }} {...rest} />
-);
+const NavLink = ({
+  to,
+  children,
+}: {
+  to: Route<typeof routes>;
+  children: ReactNode;
+}) => {
+  const route = useRoute();
+  const isActive = route.name === to.name;
+
+  return (
+    <Link
+      {...to.link}
+      sx={{ display: "block", py: "5px" }}
+      underline={isActive ? "always" : "hover"}
+    >
+      {children}
+    </Link>
+  );
+};
 
 export const App = () => {
   const route = useRoute();
@@ -39,30 +59,29 @@ export const App = () => {
           </Link>
 
           <Box sx={{ mt: "30px" }}>
-            <NavLink {...routes.simpleAtom().link}>Simple Atom</NavLink>
-            <NavLink {...routes.suspense().link}>Suspense</NavLink>
-            <NavLink {...routes.getset().link}>Getter / Setter</NavLink>
-            <NavLink {...routes.readwrite().link}>Read / Write Atom</NavLink>
-            <NavLink {...routes.provider().link}>Provider / Store</NavLink>
-            <NavLink {...routes.vanilla().link}>Vanilla</NavLink>
+            <NavLink to={routes.comparison()}>Comparison</NavLink>
+            <NavLink to={routes.simpleAtom()}>Simple Atom</NavLink>
+            <NavLink to={routes.suspense()}>Suspense</NavLink>
+            <NavLink to={routes.getset()}>Getter / Setter</NavLink>
+            <NavLink to={routes.readwrite()}>Read / Write Atom</NavLink>
+            <NavLink to={routes.provider()}>Provider / Store</NavLink>
+            <NavLink to={routes.vanilla()}>Vanilla</NavLink>
             <Box sx={{ mt: "12px" }}>
               <Typography>Utils</Typography>
             </Box>
-            <NavLink {...routes.atomWithDefault().link}>
-              atomWithDefault
-            </NavLink>
-            <NavLink {...routes.atomFamily().link}>atomFamily</NavLink>
+            <NavLink to={routes.atomWithDefault()}>atomWithDefault</NavLink>
+            <NavLink to={routes.atomFamily()}>atomFamily</NavLink>
             <Box sx={{ mt: "12px" }}>
-              <NavLink {...routes.devTools().link}>DevTools</NavLink>
-              <NavLink {...routes.faq().link}>FAQ</NavLink>
-              <NavLink {...routes.conclusion().link}>Conclusion</NavLink>
+              <NavLink to={routes.devTools()}>DevTools</NavLink>
+              <NavLink to={routes.faq()}>FAQ</NavLink>
+              <NavLink to={routes.conclusion()}>Conclusion</NavLink>
             </Box>
           </Box>
         </Box>
       </Box>
       <Box sx={{ flexGrow: 1, p: "34px 30px 30px" }}>
-        {route.name === "home" && <Home />}
-        {route.name === "intro" && <Introduction />}
+        {route.name === routes.home().name && <Home />}
+        {route.name === routes.comparison().name && <Comparison />}
         {route.name === "simpleAtom" && <SimpleAtom />}
         {route.name === "suspense" && <SuspenseComponent />}
         {route.name === "getset" && <GetSet />}

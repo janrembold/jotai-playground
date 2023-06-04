@@ -12,6 +12,7 @@ import "@fontsource/roboto/700.css";
 
 export const { RouteProvider, useRoute, routes } = createRouter({
   home: defineRoute("/"),
+  comparison: defineRoute("/comparison"),
   simpleAtom: defineRoute("/simple-atom"),
   suspense: defineRoute("/suspense"),
   getset: defineRoute("/getter-setter"),
