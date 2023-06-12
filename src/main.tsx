@@ -21,6 +21,7 @@ export const { RouteProvider, useRoute, routes } = createRouter({
   vanilla: defineRoute("/vanilla"),
   atomWithDefault: defineRoute("/atom-with-default"),
   atomFamily: defineRoute("/atom-family"),
+  combinations: defineRoute("/combinations"),
   atomWithReset: defineRoute("/atom-with-reset"),
   devTools: defineRoute("/devtools"),
   faq: defineRoute("/faq"),

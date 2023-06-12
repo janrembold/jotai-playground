@@ -17,6 +17,7 @@ import { Faq } from "./pages/Faq";
 import { Comparison } from "./pages/Comparison";
 import { Route } from "type-route";
 import { ReactNode } from "react";
+import { Combinations } from "./pages/Combinations";
 
 const NavLink = ({
   to,
@@ -71,6 +72,7 @@ export const App = () => {
             </Box>
             <NavLink to={routes.atomWithDefault()}>atomWithDefault</NavLink>
             <NavLink to={routes.atomFamily()}>atomFamily</NavLink>
+            <NavLink to={routes.combinations()}>Combinations</NavLink>
             <Box sx={{ mt: "12px" }}>
               <NavLink to={routes.devTools()}>DevTools</NavLink>
               <NavLink to={routes.faq()}>FAQ</NavLink>
@@ -90,6 +92,7 @@ export const App = () => {
         {route.name === "vanilla" && <Vanilla />}
         {route.name === "atomWithDefault" && <AtomWithDefault />}
         {route.name === "atomFamily" && <AtomFamily />}
+        {route.name === "combinations" && <Combinations />}
         {route.name === "atomWithReset" && <AtomWithReset />}
         {route.name === "devTools" && <DevToolsPage />}
         {route.name === "faq" && <Faq />}
